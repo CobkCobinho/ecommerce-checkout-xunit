@@ -1,0 +1,14 @@
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.AssemblyInfoInputs.cache
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.AssemblyInfo.cs
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.csproj.CoreCompileInputs.cache
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\bin\Debug\net10.0\EcommerceCheckout.App.exe
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\bin\Debug\net10.0\EcommerceCheckout.App.deps.json
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\bin\Debug\net10.0\EcommerceCheckout.App.runtimeconfig.json
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\bin\Debug\net10.0\EcommerceCheckout.App.dll
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\bin\Debug\net10.0\EcommerceCheckout.App.pdb
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.dll
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\refint\EcommerceCheckout.App.dll
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.pdb
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\EcommerceCheckout.App.genruntimeconfig.cache
+C:\Users\4251923673\Documents\EcommerceCheckout\EcommerceCheckout.App\obj\Debug\net10.0\ref\EcommerceCheckout.App.dll
