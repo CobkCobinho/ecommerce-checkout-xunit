@@ -1,12 +1,13 @@
-﻿using System.Text;
+using EcommerceCheckout.App;
 
-Console.WriteLine("Hello, World!");
+const int valorTotal = 100;
+const bool eClienteVip = false;
 
+string codigoRastreio = PedidoService.GerarCodigoRastreio("SP", 12345);
+int pontosFidelidade = PedidoService.CalcularPontosFidelidade(valorTotal);
+bool freteGratis = PedidoService.TemDireitoAFreteGratis(valorTotal, eClienteVip);
 
-
-string codigoRastreio = PedidoService.PedidoService.GerarCodigoRastreio("SP", 12345);
-int pontosFidelidade = PedidoService.PedidoService.CalcularPontosFidelidade(100);
-bool freteGratis = PedidoService.PedidoService.TemDireitoAFreteGratis(250, true);
-Console.WriteLine($"Código de rastreio gerado: {codigoRastreio}");
-Console.WriteLine($"Código de rastreio gerado: {pontosFidelidade}");
-Console.WriteLine($"Código de rastreio gerado: {freteGratis}");
+Console.WriteLine("Exemplo de checkout");
+Console.WriteLine($"Código de rastreio: {codigoRastreio}");
+Console.WriteLine($"Pontos de fidelidade: {pontosFidelidade}");
+Console.WriteLine($"Frete grátis: {(freteGratis ? "Sim" : "Não")}");
