@@ -1,30 +1,30 @@
-namespace PedidoService;
+using System.Globalization;
 
-    public class PedidoService {
-        public static string GerarCodigoRastreio(string regiao, int numeroPedido) {
-            regiao = regiao.ToUpper();
-            string codigoRastreio = regiao + numeroPedido;
+namespace EcommerceCheckout.App;
 
-            return codigoRastreio;
-        }
-
-        public static int CalcularPontosFidelidade(int valorTotal) {
-            valorTotal = (valorTotal / 10) * 2;
-
-            return valorTotal;
-        }
-
-        public static bool TemDireitoAFreteGratis(int valorTotal, bool eClienteVip)
+/// <summary>Regras de rastreio, fidelidade e frete do exercício de checkout.</summary>
+public static class PedidoService
+{
+    public static string GerarCodigoRastreio(string regiao, int numeroPedido)
     {
-        if (valorTotal >= 200 || eClienteVip)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        ArgumentException.ThrowIfNullOrWhiteSpace(regiao);
+        ArgumentOutOfRangeException.ThrowIfNegativeOrZero(numeroPedido);
+
+        return regiao.Trim().ToUpperInvariant() + numeroPedido.ToString(CultureInfo.InvariantCulture);
     }
 
+    /// <summary>Concede dois pontos por bloco completo de dez reais.</summary>
+    public static int CalcularPontosFidelidade(int valorTotal)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(valorTotal);
 
+        return (valorTotal / 10) * 2;
     }
+
+    public static bool TemDireitoAFreteGratis(int valorTotal, bool eClienteVip)
+    {
+        ArgumentOutOfRangeException.ThrowIfNegative(valorTotal);
+
+        return valorTotal >= 200 || eClienteVip;
+    }
+}
