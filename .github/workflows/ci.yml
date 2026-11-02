@@ -1,0 +1,36 @@
+name: Build e testes
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Testes (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+      - name: Restaurar dependências
+        run: dotnet restore EcommerceCheckout.slnx
+      - name: Compilar sem avisos
+        run: dotnet build EcommerceCheckout.slnx --configuration Release --no-restore -warnaserror
+      - name: Executar testes e coletar cobertura
+        run: dotnet test EcommerceCheckout.slnx --configuration Release --no-build --collect:"XPlat Code Coverage" --logger trx --results-directory TestResults
+      - name: Salvar relatórios
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: resultados-${{ matrix.os }}
+          path: TestResults/
+          retention-days: 7
+          if-no-files-found: warn
